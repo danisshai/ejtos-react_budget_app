@@ -15,7 +15,7 @@ const CurrencySelect = () => {
             <span> Currency: 
              <select value={currency} style={{backgroundColor:"#c5e1a5", borderRadius:"10px"}} className="" id="" onChange={(event) => handleChangeCurrency(event.target.value)}>
                         {/* <option defaultValue>Choose...</option> */}
-                {currencies.map((currency_) =>(<option value={currency_[0]} name={currency_[1]} >  {currency_[0]} {currency_[1]}</option> ))}    
+                {currencies.map((currency_) =>(<option key={currency_[0]} value={currency_[0]} name={currency_[1]} >  {currency_[0]} {currency_[1]}</option> ))}    
                   </select>
             </span>
         </div>
