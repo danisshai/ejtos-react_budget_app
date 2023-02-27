@@ -70,6 +70,20 @@ export const AppReducer = (state, action) => {
             return {
                 ...state
             }
+        case 'NEW_BUDGET':
+            action.type = "DONE";
+            let newBudget = parseInt(action.payload);
+            if (newBudget) {
+                if (newBudget > 20000) {
+                    window.alert("Budget Cannot be more that 20.000")
+                }else{
+                    state.budget = newBudget
+                }
+            }
+
+            return {
+                ...state
+            }
 
         default:
             return state;
