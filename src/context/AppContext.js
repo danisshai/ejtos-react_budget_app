@@ -77,7 +77,12 @@ export const AppReducer = (state, action) => {
                 if (newBudget > 20000) {
                     window.alert("Budget Cannot be more that 20.000")
                 }else{
-                    state.budget = newBudget
+                    let currentExpenses = state.expenses.reduce((counter, val)=> counter += parseInt(val.cost),0)
+                    if (currentExpenses>newBudget) {
+                        window.alert("You cannor reduce Budget lower that spending")
+                    }else{
+                        state.budget = newBudget
+                    }
                 }
             }
 
